@@ -1,16 +1,14 @@
-from django.shortcuts import render
-from rest_framework import views
-from rest_framework import status
-from rest_framework.response import Response
-from django.http import JsonResponse
 # Create your views here.
 import json
+
 from django.conf import settings
+from django.shortcuts import render
+from rest_framework import status, views
+from rest_framework.response import Response
 
 
 class List(views.APIView):
     def post(self, request):
-
         lat = request.data.pop("lat")
         lon = request.data.pop("lon")
         with open(settings.BASE_DIR + "/services/services_db.json", 'r') as jf:
