@@ -50,9 +50,9 @@ def assess_general_risk(origin):
 
 def assess_individual_risk(individual):
 
-	female = individual['Gender'].lower() in ['female', 'f', 'woman', 'girl']
+	female = individual["Individual"]["gender_identity"].lower() in ['female', 'f', 'woman', 'girl']
 
-	[m1, d1, y1] = individual['Birthday'].split('/')
+	[m1, d1, y1] = [individual["Individual"]["birth-month"], individual["Individual"]["birth-day"], individual["Individual"]["birth-year"]]
 	[m2, d2, y2] = datetime.today().strftime('%m/%d/%Y').split('/')
 	if int(m2) > int(m1) or (int(m2) == int(m1) and int(d2) >= int(d1)):
 		age = int(y2) - int(y1)
@@ -64,9 +64,9 @@ def assess_individual_risk(individual):
 	parent = any(person.lower() in individual['Family'].values() for person in ['child', 'son', 'daughter', 'nephew', 'niece'])
 
 	responses_to_analyze = ''
-	for question in individual['Well Being']:
-		if question != 'Q2':
-			responses_to_analyze += (individual['Well Being'][question] + ' ')
+	for question in individual['Wellbeing']:
+		if question != 'a2' and question[0] == 'a':
+			responses_to_analyze += (individual['Wellbeing'][question] + ' ')
 
 	tone = tone_analyzer.tone({'text': responses_to_analyze}, content_type='application/json').get_result()
 
@@ -103,11 +103,11 @@ def assess_individual_risk(individual):
 	print_outcome = 'This survivor, (' + individual['Name'] + '), shows risk factors associated with poor ' + 'mental health outcomes post-disaster: ' + factors + end_message
 
 	idv_data = {'text' : responses_to_analyze, 
-				'anxiety' : individual['Feelings']['Anxiety'], 
-				'guilt' : individual['Feelings']['Guilt'], 
-				'sadness' : individual['Feelings']['Sadness'], 
-				'confusion' : individual['Feelings']['Confusion'], 
-				'fear' : individual['Feelings']['Fear']}
+				'anxiety' : individual['Feelings']['a1'], 
+				'guilt' : individual['Feelings']['a2'], 
+				'sadness' : individual['Feelings']['a3'], 
+				'confusion' : individual['Feelings']['a4'], 
+				'fear' : individual['Feelings']['a5']}
 
 	return(print_outcome, idv_data, wellness_score)
 
