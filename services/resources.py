@@ -10,6 +10,22 @@ import shapefile
 import json
 from geopy.geocoders import Nominatim
 
+for country in ["Philippines", "Vietnam", "Sierra Leone"]:
+    hs_dir = country+"_healthsites/"
+    r = requests.get(
+        "https://healthsites.io/media/shapefiles/" + country.replace(' ', '%20') + "_shapefile.zip")
+    print("Retrieving shpfile")
+    z = zipfile.ZipFile(io.BytesIO(r.content))
+    z.extractall(hs_dir)
+
+    sf = shapefile.Reader(hs_dir+country+".shp")
+    geojson = sf.__geo_interface__['features']
+    # os.remove(hs_dir)
+
+    f = open(country+"_healthsites.geojson", 'w')
+    json.dump(geojson, f)
+    f.close()
+
 
 def get_nearest_hosp(point, hospitals):
 
@@ -77,25 +93,9 @@ def great_circle_vec(lat1, lng1, lat2, lng2, earth_radius=6371009):
 def find_nearest_hospitals(country, orig_lat, orig_lon):
     geolocator = Nominatim(user_agent="resp")
 
-    if not os.path.isdir(country):
-        hs_dir = country+"_healthsites/"
-        r = requests.get(
-            "https://healthsites.io/media/shapefiles/" + country.replace(' ', '%20') + "_shapefile.zip")
-        print("Retrieving shpfile")
-        z = zipfile.ZipFile(io.BytesIO(r.content))
-        z.extractall(hs_dir)
-
-        sf = shapefile.Reader(hs_dir+country+".shp")
-        geojson = sf.__geo_interface__['features']
-        # os.remove(hs_dir)
-
-        f = open(country+'/'+country+"_healthsites.geojson", 'w')
-        f.write(geojson)
-        f.close()
-    else:
-        f = open(country+'/'+country+"_healthsites.geojson", 'r')
-        geojson = f.read()
-        f.close()
+    f = open(country+'/'+country+"_healthsites.geojson", 'r')
+    geojson = json.load(f)
+    f.close()
     hospitals = []
     nearest = []
     for i in range(len(geojson)):
