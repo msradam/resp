@@ -17,12 +17,16 @@ def find_nearest_hospitals(lon_key, lat_key, orig_lat, orig_lon, csv):
     print(list(dict(df).keys()))
     for i in range(len(df)):
         hospitals.append(
-            {"lat": df[lat_key][i], "lon": df[lon_key][i], "pos": i, "type": })
+            {"lat": df[lat_key][i], "lon": df[lon_key][i],
+             "pos": i, "type": df["type"][i], "name": df["type"][i],
+             "phone": df["phone"][i], "defining-hours": df["defining-hours"][i],
+             "physical-address": df["physical-address"][i]})
     for hospital in hospitals:
         dist = haversine((orig_lat, orig_lon),
                          (hospital["lat"], hospital["lon"]))
         hospital["dist"] = dist
     hospitals = sorted(hospitals, key=itemgetter("dist"))
+    print(hospitals[0:5])
     # print(hospitals)
     # positions = {}
     # for hospital in hospitals[:3]:
