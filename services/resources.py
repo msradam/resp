@@ -10,7 +10,7 @@ import shapefile
 import json
 from geopy.geocoders import Nominatim
 
-for country in ["Philippines", "Vietnam", "Sierra Leone"]:
+for country in ["Philippines", "Vietnam", "Sierra Leone", "Venezuela"]:
     hs_dir = country+"_healthsites/"
     r = requests.get(
         "https://healthsites.io/media/shapefiles/" + country.replace(' ', '%20') + "_shapefile.zip")
@@ -93,7 +93,7 @@ def great_circle_vec(lat1, lng1, lat2, lng2, earth_radius=6371009):
 def find_nearest_hospitals(country, orig_lat, orig_lon):
     geolocator = Nominatim(user_agent="resp")
 
-    f = open(country+'/'+country+"_healthsites.geojson", 'r')
+    f = open(country+"_healthsites.geojson", 'r')
     geojson = json.load(f)
     f.close()
     hospitals = []
