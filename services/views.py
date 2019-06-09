@@ -6,7 +6,7 @@ from django.shortcuts import render
 from rest_framework import status, views
 from rest_framework.response import Response
 
-from .resources import find_nearest_hospitals
+from .resources import *
 
 
 class List(views.APIView):
@@ -17,7 +17,12 @@ class List(views.APIView):
         with open(settings.BASE_DIR + "/services/services_db.json", 'r') as jf:
             services_db = json.load(jf)
             services_db.append(
-                [lat] + [lon] + [country] + find_nearest_hospitals(country, lat, lon))
+                {
+                    "lat": lat,
+                    "lon": lon,
+                    "country", country,
+                    "nearest_hospitals": find_nearest_hospitals(country, lat, lon)
+                })
         with open(settings.BASE_DIR + "/services/services_db.json", 'w') as jf:
             json.dump(services_db, jf)
         return Response(status=status.HTTP_200_OK)
@@ -31,6 +36,6 @@ class List(views.APIView):
         with open(settings.BASE_DIR + "/services/services_db.json") as jf:
             services_db = json.load(jf)
             for entry in services_db:
-                if entry[2] == country:
+                if entry["lat"] == lat and entry["lon"] == lon and entry["country"] == country:
                     final_response.append(entry)
         return Response(final_response)
