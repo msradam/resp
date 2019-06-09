@@ -55,7 +55,6 @@ def get_nearest_hosp(point, hospitals):
 
     df['reference_y'] = point[0]
     df['reference_x'] = point[1]
- 2
     # calculate the distance between each node and the reference point
     distances = great_circle_vec(lat1=df['reference_y'],
                                  lng1=df['reference_x'],
