@@ -2,17 +2,12 @@ import io
 import zipfile
 import requests
 import pandas as pd
-import math
-from operator import itemgetter
 import numpy as np
 import scipy
-from haversine import haversine
 import osmnx as ox
 import networkx as nx
 from sklearn.neighbors import KDTree, DistanceMetric
-import urllib
 import os
-import geopandas as gp
 import shapefile
 import json
 from geopy.geocoders import Nominatim
