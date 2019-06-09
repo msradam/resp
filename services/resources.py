@@ -4,8 +4,6 @@ import requests
 import pandas as pd
 import numpy as np
 import scipy
-import osmnx as ox
-import networkx as nx
 from sklearn.neighbors import KDTree, DistanceMetric
 import os
 import shapefile
