@@ -105,7 +105,8 @@ def assess_individual_risk(individual):
         end_message = '.'
 
     print_outcome = 'This survivor, (' + individual['Individual']['first_name'] + '), shows risk factors associated with poor ' + \
-        'mental health outcomes post-disaster: ' + factors + ', their wellness score is ' + str(wellness_score) + ', ' end_message
+        'mental health outcomes post-disaster: ' + factors + \
+        ', their wellness score is ' + str(wellness_score) + ', ' + end_message
 
     idv_data = {'text': responses_to_analyze,
                 'anxiety': individual['Feelings']['a1'],
