@@ -83,6 +83,7 @@
             "a3": "Just be here!",
             "q4": "What physical symptoms do you feel (headaches, nausea, chest/back pain, etc;)?",
             "a4": "None!",
+            "q5": "How many months warning were you given prior to the disaster?",
             "a5": "warn 2",
             "q6": "How many months do you expect to be displaced?",
             "a6": "disp 10"
@@ -127,6 +128,7 @@
             "a3": "Just be here!",
             "q4": "What physical symptoms do you feel (headaches, nausea, chest/back pain, etc;)?",
             "a4": "None!",
+            "q5": "How many months warning were you given prior to the disaster?",
             "a5": "warn 5",
             "q6": "How many months do you expect to be displaced?",
             "a6": "disp 2"
@@ -168,6 +170,7 @@
             "a3": "Just be here!",
             "q4": "What physical symptoms do you feel (headaches, nausea, chest/back pain, etc;)?",
             "a4": "None!",
+            "q5": "How many months warning were you given prior to the disaster?",
             "a5": "warn 8",
             "q6": "How many months do you expect to be displaced?",
             "a6": "disp 12"
@@ -209,6 +212,7 @@
             "a3": "Just be here!",
             "q4": "What physical symptoms do you feel (headaches, nausea, chest/back pain, etc;)?",
             "a4": "None!",
+            "q5": "How many months warning were you given prior to the disaster?",
             "a5": "warn 1",
             "q6": "How many months do you expect to be displaced?",
             "a6": "disp 12"

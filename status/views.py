@@ -5,6 +5,7 @@ from django.shortcuts import render
 from rest_framework import status, views
 from rest_framework.response import Response
 from .illness_risk_predictor import *
+from .survey import *
 # Create your views here.
 from joblib import dump, load
 model_anxiety = load("status/illness_model_anxiety.joblib")
@@ -15,16 +16,17 @@ model_depression = load("status/illness_model_depression.joblib")
 class Status(views.APIView):
     def get(self, request):
         with open(settings.BASE_DIR + "/status/people_db.json", 'r') as jf:
-            people_db = json.load(jf)
-            for person in list(people_db.keys()):
-                new_data = [people_db[person]['Wellbeing']
-                            ['q5'], people_db[person]['Wellbeing']['q6']]
-                people_db[person]['Individual']['Anxiety Risk'] = check_illness_risks(
-                    new_data, model_anxiety)
-                people_db[person]['Individual']['PTSD Risk'] = check_illness_risks(
-                    new_data, model_ptsd)
-                people_db[person]['Individual']['Depression Risk'] = check_illness_risks(
-                    new_data, model_depression)
+            people_db = json.load(jf)[0]
+            print(people_db)
+            for person in people_db.keys():
+                people_db[person]['Individual']['Individual Risk'] = assess_individual_risk(
+                    people_db[person])
+                # people_db[person]['Individual']['Anxiety Risk'] = check_illness_risks(
+                #     new_data, model_anxiety)
+                # people_db[person]['Individual']['PTSD Risk'] = check_illness_risks(
+                #     new_data, model_ptsd)
+                # people_db[person]['Individual']['Depression Risk'] = check_illness_risks(
+                #     new_data, model_depression)
         return Response(people_db)
 
     def post(self, request, format=None):
