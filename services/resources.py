@@ -87,7 +87,7 @@ def find_nearest_hospitals(country, orig_lat, orig_lon):
 
         sf = shapefile.Reader(hs_dir+country+".shp")
         geojson = sf.__geo_interface__['features']
-        os.remove(hs_dir)
+        # os.remove(hs_dir)
 
         f = open(country+'/'+country+"_healthsites.geojson", 'w')
         f.write(geojson)
