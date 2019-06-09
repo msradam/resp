@@ -7,9 +7,9 @@ from rest_framework.response import Response
 from .illness_risk_predictor import *
 # Create your views here.
 from joblib import dump, load
-model_anxiety = load("illness_model_anxiety.joblib")
-model_ptsd = load("illness_model_ptsd.joblib")
-model_depression = load("illness_model_depression.joblib")
+model_anxiety = load("status/illness_model_anxiety.joblib")
+model_ptsd = load("status/illness_model_ptsd.joblib")
+model_depression = load("status/illness_model_depression.joblib")
 
 
 class Status(views.APIView):

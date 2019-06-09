@@ -12,8 +12,8 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 illnesses = ['anxiety', 'depression', 'ptsd']
-csv1 = 'warning.csv'
-csv2 = 'displacement.csv'
+csv1 = 'status/warning.csv'
+csv2 = 'status/displacement.csv'
 warn = pd.read_csv(csv1)
 disp = pd.read_csv(csv2)
 data = []
