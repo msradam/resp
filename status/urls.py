@@ -4,5 +4,5 @@ from django.conf.urls import url
 app_name = 'status'
 
 urlpatterns = [
-    url(r'^status/$', Status.as_view(), name="status"),
+    url(r'^entries/$', Status.as_view(), name="entries"),
 ]
