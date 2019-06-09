@@ -42,7 +42,9 @@ def assess_general_risk(origin):
 
 	displacement = pd.read_csv("homeless-natural-disasters.csv")
 	death_toll = pd.read_csv("deaths-natural-disasters.csv")
-	cities_by_pop = requests_html.find('#')
+	cities_by_pop = "cities_by_pop.htm".find('#Cities_by_population_density')
+
+	# parse (off-line) data based on survivor's location to assess general population risk
 
 	return
 
