@@ -18,9 +18,7 @@ class Status(views.APIView):
         query_person = request.data.pop('name_to_search')
         with open(settings.BASE_DIR + "/status/people_db.json", "r") as jf:
             people_db = json.load(jf)
-            for i in range(len(people_db)):
-                if people_db[i]["name"] == query_person:
-                    people_db[i]["checked_in"] = True
+            people_db[query_person]['Individual']['checked_in'] = True
         with open(settings.BASE_DIR + "/status/people_db.json", "w") as jf:
             json.dump(people_db, jf)
         return Response(status=status.HTTP_200_OK)

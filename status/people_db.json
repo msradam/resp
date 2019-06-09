@@ -1,4 +1,5 @@
-[{
+{
+    "Adam Rahman": {
         "Individual": {
             "first_name": "Adam",
             "last_name": "Rahman",
@@ -36,7 +37,8 @@
             "q4": "What physical symptoms do you feel (headaches, nausea, chest/back pain, etc;)?",
             "a4": "None!"
         }
-    }, {
+    },
+    "Ava Biery": {
         "Individual": {
             "first_name": "Ava",
             "last_name": "Biery",
@@ -74,7 +76,8 @@
             "q4": "What physical symptoms do you feel (headaches, nausea, chest/back pain, etc;)?",
             "a4": "None!"
         }
-    }, {
+    },
+    "Alex Guevara": {
         "Individual": {
             "first_name": "Alex",
             "last_name": "Guevara",
@@ -112,7 +115,8 @@
             "q4": "What physical symptoms do you feel (headaches, nausea, chest/back pain, etc;)?",
             "a4": "None!"
         }
-    }, {
+    },
+    "Jessica Peng": {
         "Individual": {
             "first_name": "Jessica",
             "last_name": "Peng",
@@ -148,7 +152,7 @@
             "a4": "None!"
         }
     },
-    {
+    "Juliana Mercer Fogg": {
         "Individual": {
             "first_name": "Juliana",
             "last_name": "Mercer Fogg",
@@ -184,6 +188,4 @@
             "a4": "None!"
         }
     }
-
-
-]
+}
