@@ -20,7 +20,7 @@ class List(views.APIView):
                 {
                     "lat": lat,
                     "lon": lon,
-                    "country", country,
+                    "country": country,
                     "nearest_hospitals": find_nearest_hospitals(country, lat, lon)
                 })
         with open(settings.BASE_DIR + "/services/services_db.json", 'w') as jf:
