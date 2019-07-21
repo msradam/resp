@@ -1,5 +1,12 @@
-# resp
-Psychological first aid. 
+# 💠 RESP - Responsive Emotional Support Protocols ![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge)
+The API is live at resp-api.herokuapp.com with the routes /services, /status, and /survey.
+
+## What I learned
+* Implemented a REST API in Django, with separate apps for different application functions
+* Collaborated with frontend designers to refine API payloads
+* Deployed API to Heroku
+
+## Description
 In the aftermath of natural disasters, the mental and emotional health of survivors  is overlooked and undercovered.  A set of digital tools for first responders to provide effective, ethical mental health intervention in the immediate aftermath of a disaster and diagnostics for long-term prevention. 
 
 RESP is meant to be an extension of a first responder's toolkit, adhering to the guidelines established by the World Health Organization's Psychological First Aid Kit. It is built with Django REST Framework and React with Machine Learning powered by IBM Watson and custom logistical regression classifiers trained on post-disaster psychiatric data. 
@@ -10,10 +17,7 @@ Once first responders fill out a survey for a survivor, they are added to the Ca
 
 The final module is Services, which uses offline geolocating to find nearby shelters and health facilities. RESP will synchronize with other users when internet connectivity is restored, and is intended to bounce off of Project OWL's mesh network to synchronize catalog data and update list of available services. 
 
-RESP's business model is to provide a public, free, open-source iteration but customize the machine learning models and modules for an organization's - such as FEMA, UNICEF, WHO, etc. - specific response needs, and this is where the revenue stream can arise to pay for server costs and deployment of AI models. 
-
-RESP is built by a varied team of college students, graduates, bootcamp students and professional developers, we are proud to have participated at AngelHack!
-
+## Team
 Ava Biery - Backend, Machine Learning
 Adam Rahman - Backend (Django Rest), geolocating, Machine Learning
 Alex Guevara - Frontend (React), UI Design
