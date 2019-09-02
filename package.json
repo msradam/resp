@@ -1,0 +1,37 @@
+{
+  "name": "resp-api",
+  "version": "1.0.0",
+  "description": "Psychological first-aid app for first responders.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/msradam/resp-api.git"
+  },
+  "keywords": [
+    "psychological",
+    "first-aid",
+    "ibm",
+    "call",
+    "for",
+    "code"
+  ],
+  "author": "Adam Rahman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/msradam/resp-api/issues"
+  },
+  "homepage": "https://github.com/msradam/resp-api#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dot-env": "^0.0.1",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.11",
+    "nodemon": "^1.19.1",
+    "tortoisedb": "^1.0.8",
+    "turtledb": "^1.0.2"
+  }
+}

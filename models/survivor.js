@@ -1,0 +1,30 @@
+const mongoose = require('mongoose')
+
+const url = process.env.MONGODB_URI
+
+mongoose.connect(url, { useNewUrlParser: true })
+    .then(result => {
+	console.log('connected to MongoDB')
+    })
+    .catch((error) => {
+	consoe.log('error connecting to MongoDB:', error.message)
+    })
+
+const survivorSchema = new mongoose.Schema({
+    first_name: String,
+    family_name: String,
+    age: Number,
+    recent_experience: String,
+    needed_services: String,
+    well_being: String,
+    friends_relatives: String,})
+
+survivorSchema.set('toJSON', {
+    transform: (document, returnedObject) => {
+	returnedObject.age = returnedObject.age.toString()
+	delete returnedObject._id
+	delete returnedObject.__v
+    }
+})
+
+module.exports = mongoose.model('Survivor', survivorSchema)
