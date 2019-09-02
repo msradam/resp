@@ -1,10 +1,19 @@
 # 💠 RESP - Responsive Emotional Support Protocols ![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge)
-The API is live at resp-api.herokuapp.com with the routes /services, /status, and /survey.
+The app is live at https://resp-angelhack.herokuapp.com. 
+
+## API Endpoints
+`/api/survivors`
+
+`GET`: Returns a list of all survivors checked in
+
+`POST`: (Private) Checks in a new survivor to the database
+
 
 ## What I learned
-* Implemented a REST API in Django, with separate apps for different application functions
-* Collaborated with frontend designers to refine API payloads
-* Deployed API to Heroku
+* Collaborated with a team of UI/UX designers, a frontend developer, and two backend developers
+* Developed an API with Node + Express and MongoDb with integrated Typeform webhooks
+* Implemented a frontend with React and React Router with an embedded Typeform 
+
 
 ## Description
 In the aftermath of natural disasters, the mental and emotional health of survivors  is overlooked and undercovered.  A set of digital tools for first responders to provide effective, ethical mental health intervention in the immediate aftermath of a disaster and diagnostics for long-term prevention. 
