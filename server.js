@@ -6,6 +6,8 @@ const bodyParsers = require('body-parser')
 
 app.use(cors())
 app.use(bodyParsers.json())
+app.use(express.static('build'))
+
 
 const Survivor = require('./models/survivor')
 

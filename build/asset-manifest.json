@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.fd1099c1.chunk.css",
+    "main.js": "/static/js/main.b20ef7cb.chunk.js",
+    "main.js.map": "/static/js/main.b20ef7cb.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.ea92a0de.js",
+    "runtime~main.js.map": "/static/js/runtime~main.ea92a0de.js.map",
+    "static/js/2.e68073a1.chunk.js": "/static/js/2.e68073a1.chunk.js",
+    "static/js/2.e68073a1.chunk.js.map": "/static/js/2.e68073a1.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.aa0c8cf0242205c1e0ed001ddda34541.js": "/precache-manifest.aa0c8cf0242205c1e0ed001ddda34541.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.fd1099c1.chunk.css.map": "/static/css/main.fd1099c1.chunk.css.map",
+    "static/media/index.css": "/static/media/what-the-hex.6633a16d.png"
+  }
+}
