@@ -1,1 +1,0 @@
-web: gunicorn resp.wsgi
