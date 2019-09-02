@@ -11,7 +11,8 @@ const Survivor = require('./models/survivor')
 
 app.get('/api/survivors', (req, res) =>
 	{Survivor.find({}).then(survivors => {
-	    response.json(survivors.map(survivor => survivor.toJSON()))
+	    console.log(survivors);
+	    res.json(survivors.map(survivor => survivor.toJSON()))
 	});
 	});
 
