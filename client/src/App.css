@@ -3,6 +3,11 @@
   display:inline-block;
 }
 
+.services {
+  position: relative;
+  display:inline-block;
+}
+
 .resp-options {
   position: relative;
   align-items: center;
