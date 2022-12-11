@@ -29,7 +29,7 @@
     "cors": "^2.8.5",
     "dot-env": "^0.0.1",
     "dotenv": "^8.1.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "mongoose": "^5.6.11",
     "nodemon": "^1.19.1",
     "tortoisedb": "^1.0.8",
