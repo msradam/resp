@@ -1,5 +1,4 @@
-# 💠 RESP - Responsive Emotional Support Protocols ![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge)
-The app is live at https://resp-angelhack.herokuapp.com. 
+# 💠 RESP - Responsive Emotional Support Protocols 
 
 ## API Endpoints
 `/api/survivors`
